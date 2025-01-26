@@ -9,10 +9,10 @@ SOLTI provides a comprehensive framework for testing and integrating system comp
 I have done small lab clusters for a while. Not the HVAC kind, but those that are built to task when/as desired. 
 The software and hardware technology half-life is real. The desirements and requirements alway grow tigher. 
 
-In the last few years I was focused on security testing.  I am a kinestic creative, so I focus on how to build out a sustainable system.
-For this exercise I want to learn ansible, containers, github and LLMs.  I have started on [cluster monitoring](https://github.com/jackaltx/solti-monitoring), both log and metric collection. 
-
-The collection work is mature, and I am starting on the ensemble work.  My goal is to [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) the molecule testing pattern and add a few tools I need.
+Lately the focus was on security testing. As a kinestic creative I learn best by doing. The prize is building out a flexible, repeatable, testable computer cluster.
+In this exercise I wanted to learn ansible, containers, github and LLMs. These efforts started on [cluster monitoring](https://github.com/jackaltx/solti-monitoring) 
+to handle log and metric generation and collection.  The collection project is maturing, and I am starting on the ensemble work.  
+My tactical effort will be to [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) the molecule testing pattern, then move onto tools I need soon.
 
 ## Claude as my pair programmer
 
