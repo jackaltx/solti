@@ -23,7 +23,21 @@ However, when I keep to my north star and focus on the goal the product looks go
 Claude wrote the first draft of this, and helped come up with tool ideas. Claude's writing is better than mine. The ability to review all the code and come up with a good readme has been fantastic.
 
 Why Claude? Serendipity really. A smart young fellow showed me ChatGPT and it was cool.  A year later he showed me how he was using Claude.  After a couple of hours I signed up.  Now that bright
-young fellow has moved on, but this is working well for me.  And the AI is just a tool getting me where I want to go.  
+young fellow has moved on. His reason was that claude is sandboxed. It can't access the code and I cannot get their MCP to work on Windows or Linux. 
+So it only see's the "artifacts" that I have uploaded to it. It cannot run any of the code it generates, but it sure looks pretty. Makes the debugging session that are infuriating. 
+Sometimes it looks at the artifacts and other times not at all. My main caution is "don't let it take you too far from your vision". You will need to pull in the reigns from time to time and focus.  
+More than once we have gone in circles and core issue was a deeper structurals issue. An example of that kind of issue is the Proxmox-ve LXC interface via command line interface, pct exec, does 
+not create a shell which does not allow you to pipe over files.  This breaks ansible interface module for configuration. 
+I got to learn several techniques for building an commmand, but none them can ever work (but I have an idea that I might try one day)
+
+### Current Focus with Claudee
+
+Work towards standardizing a reporting flow. We have now moved to more feature testing (i.e., logging, metrics) focus over three primary 
+linux distros (i.e., rocky93, Debian12, Ubuntu24) with three computes (i.e., promox-ve, podman, github).   So to keep some orthogonality 
+in this 3D matrix I want to keep the verify outputs to the feature (logging,...)  and separate the outputs into an assembly pipeline.  
+For each test run on github I want a short version for GIST output and Wiki Detail report for all tagged version and last three for the 
+main branch. On github it will continue to put the files in verify_output/  in the saved output.  How should we proceed?
+
 
 ## Name Origin
 
@@ -39,7 +53,7 @@ His [Wagner](https://en.wikipedia.org/wiki/Der_Ring_des_Nibelungen_(Georg_Solti_
 ## Project Structure
 
 There is no one way to look at this project structure.  At the heart is about building
-a flexible and testable cluster out of services writen by other people. To accomplis that
+a flexible and testable cluster out of services writen by other people. To accomplish this
 I am using the Ansible inventory to define the cluster interactions. Ansible roles are idempotent scripts 
 that install, configure, test the clusters intended functionality. This is our starting. ansible galaxy 
 collection structure concept. 
