@@ -10,7 +10,7 @@ I have done small lab clusters for a while. Not the HVAC kind, but those that ar
 The software and hardware technology half-life is real. The desirements and requirements alway grow tigher. 
 
 In the last few years I was focused on security testing.  I am a kinestic creative, so I focus on how to build out a sustainable system.
-For this exercise I want to learn ansible, containers, github and LLMs.  I have started on [cluster monitoring]([https://www.example.com](https://github.com/jackaltx/solti-monitoring)), both log and metric collection. 
+For this exercise I want to learn ansible, containers, github and LLMs.  I have started on [cluster monitoring](https://github.com/jackaltx/solti-monitoring), both log and metric collection. 
 
 The collection work is mature, and I am starting on the ensemble work.  My goal is to [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) the molecule testing pattern and add a few tools I need.
 
