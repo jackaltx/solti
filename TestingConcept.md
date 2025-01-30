@@ -208,4 +208,5 @@ Ansible facts are more like immutable state - each task sees the state as it was
 
 (claude) Ah, now that's a fascinating perspective! You're thinking about building up a knowledge base of test results that could inform both test analysis and test generation. This completely changes how we should think about the master report structure.
 
-(Sometimes claude seems there with and show understanding the concept. Not always. Notice how he strokes my ego, never really adding to the design, and yet can generate such pretty code.)
+* Sometimes claude seems there with and show understanding the concept. Not always. Notice how he strokes my ego, never really adding to the design, and yet can generate such pretty code. I had him create this document so I can add it into the project artifacts. Even if you upload, it seems to work better if you reference it in the question. *
+  
