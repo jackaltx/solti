@@ -113,7 +113,9 @@ none
 
 ## Prompt
 
+```
 love it...including the sensible disclaimer.   This is exploratory phase. simple is better than thorough. now, can you provide a script to verify that this BOM.  At this time bash.   Create output that you can then analyze.
+```
 
 ### Response
 
@@ -153,11 +155,13 @@ See: bom-verify-script.sh
 
 Jack Thoughts: The script worked out of the box. Pretty standard gnu/unix stuff. The results went into a single file for upload. So...
 
-## Q
+## Prompt
 
+```
 review the output and give me an outline of what you can deduce. (uploaded output)
+```
 
-### R
+### Response
 
 Based on the verification script output, I can deduce the following about your ISPConfig server:
 
@@ -225,11 +229,13 @@ This server appears to be a fully functional web hosting environment with all th
 
 ## Prompt
 
+```
 good start.  What would you conclude about the purpose of this server?
+```
 
 FGI, The install command was
 
-```
+``` bash
 wget -O - https://get.ispconfig.org | sh -s -- \
   --channel=stable \
   --use-php=8.2,8.3 \
@@ -285,7 +291,9 @@ none
 
 ## Prompt
 
+```
 create a report using the results of the two script that summarazes your conclusion.  The BOM will be appendix A.  The report sections should comply with CMMC or NIST security formats.
+```
 
 ### Response
 
