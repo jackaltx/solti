@@ -65,13 +65,33 @@ Now, for capturing and maintaining this information effectively, I'd recommend t
 
 See attached local file : software-bom-template.md
 
-Jack Thoughts:  He knows somd of the software assurance bingo wors. So I scoped it to an ispconfig installation.
+Jack Thoughts:  Claude is play a game of software assurance bingo words. So I scoped it to an ispconfig installation. Ispconfig is an all in hosting business software.  I have use it for many yeard and it has been quite good what deliving what it says.  There is some useful online support using HowToForge.
 
-Ispconfig is an all in hosting business software.  It has a webserver, database, php, email, ... .
+### What is ISPConfig
+
+ISPConfig is a user-friendly control panel that simplifies managing web hosting servers. Think of it as a dashboard that lets website owners and hosting providers manage multiple websites, email accounts, and domains without needing to be technical experts.
+
+With ISPConfig, you can:
+
+- Create and manage websites
+- Set up email accounts and forwarders
+- Add domain names
+- Manage databases
+- Install applications like WordPress
+- Monitor server performance
+- Configure security settings
+
+For hosting companies, ISPConfig makes it easy to serve multiple clients from a single server while keeping each client's content separate and secure. For individuals, it provides a straightforward way to manage personal websites without dealing with complex server commands.
+
+ISPConfig works on Linux servers and offers a clean, web-based interface accessible from any browser. It's open-source software, meaning it's free to use and can be customized to fit specific needs.
+
+Whether you're running a single personal blog or managing hosting for dozens of clients, ISPConfig simplifies the technical aspects of web hosting so you can focus on your content or business.
 
 ## Prompt
 
+```
 looks good...now apply that as a appropriate to this (I uploaded a fresh install logs for ispconfig. I will cover install elsewhere.)
+```
 
 ### Response
 
@@ -316,9 +336,11 @@ The analysis confirms that this is a freshly deployed web hosting server with a 
 
 Is there any specific section of the report you'd like me to elaborate on further?
 
-## End of share
+## Summary
 
-The bonus is a sanitized output report of a test server in the cloud which has been up for a few years
+This work continued down specifics of my install. As a bonus I have attached a sanitized output report of a test server in the cloud which has been up for a few years. I am in the process of decommissioning it so that I can redeploy on as required. The Solti project was started to provide a foundation for that.  I am using ansible to see how far I can push the concept of devops-iness.
+
+The tests are nowhere near deep enough to make any conclusions, yet they words look good and can give a positive feeling.  To do this for real would require tooling I am not ready to tackle.  Working with this AI is a box of chocolates approach to programming.  You will get great insights that will focus on the prompters views.  You will get a few random suprises that are good.  However, the prompter must maintain the overall vision and keep from a drift into areas that don't matter.  That is good for security assessments.  Better than domain specific tools?  This execise took less than a morning to do, and far longer to document.
 
 see: SecurityReport-generic-ispconfig.md
 
