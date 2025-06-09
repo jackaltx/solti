@@ -74,7 +74,7 @@ jackaltx/
 ├── solti/monitoring/   # System monitoring and metrics collection
 ├── solti/conductor/    # Proxmox management and orchestration
 ├── solti/ensemble/     # Support tools and shared utilities
-├── solti/containers/   # testing Containers
+├── solti/containers/   # Testing containers
 └── solti/score/        # Documentation and playbooks
 ```
 
@@ -97,6 +97,18 @@ jackaltx/
 - [jackaltx/solti-containers](https://github.com/jackaltx/solti-containers)
 - jackaltx/solti-score
 
+## Current Implementation Status
+
+**Production Ready Projects:**
+
+- ✅ **solti-monitoring**: Comprehensive metrics and logging
+- ✅ **solti-containers**: Production-ready container services
+- 🚧 **solti-ensemble**: Support tools (in development)
+- 📋 **solti-conductor**: Proxmox management (planned)
+- 📋 **solti-score**: Documentation (planned)
+
+### solti-monitoring (Production Ready)
+
 Current implementation includes:
 
 - Metrics collection (Telegraf)
@@ -104,6 +116,51 @@ Current implementation includes:
 - Log aggregation (Loki)
 - OpenTelemetry collection (Alloy)
 - Shared configurations and utilities
+
+### solti-containers (Production Ready)
+
+**Status: Production Ready** - Comprehensive container deployment framework
+
+Current implementation includes:
+
+- **Elasticsearch**: Search and analytics with Elasticvue GUI
+- **HashiVault**: Complete secrets management with multiple engines
+- **Mattermost**: Team collaboration with PostgreSQL backend
+- **Redis**: High-performance key-value store with GUI
+- **Traefik**: Modern reverse proxy with TLS automation
+- **MinIO**: S3-compatible object storage
+
+**Key Features:**
+
+- Rootless Podman deployment with systemd integration
+- Cross-platform support (RHEL/CentOS and Debian-based)
+- Standardized management scripts (`manage-svc.sh`, `svc-exec.sh`)
+- Security-first design with SELinux support
+- Consistent deployment patterns across all services
+
+**Architecture Highlights:**
+
+- Common `_base` role for shared functionality
+- Quadlet-based systemd integration
+- Automated service lifecycle management
+- Comprehensive verification and health checking
+
+**Container Services Integration:**
+
+The containers project integrates with the monitoring stack:
+
+- **Mattermost**: Receives monitoring alerts and notifications
+- **Elasticsearch**: Stores and analyzes log data from monitoring
+- **Redis**: Caches metrics and provides fast data access
+- **HashiVault**: Manages secrets for monitoring components
+- **Traefik**: Provides reverse proxy for monitoring dashboards
+
+This creates a complete development and testing ecosystem where:
+
+1. Monitoring collects metrics and logs
+2. Containers provide supporting services
+3. Everything is deployed consistently via Ansible
+4. Services can be quickly spun up/down for testing
 
 ### solti-conductor (TBD)
 
@@ -146,6 +203,13 @@ Documentation and playbooks:
 - Integration validation
 - Performance measurement
 
+**Container Testing:**
+
+- Standardized verification tasks for all services
+- Health checks and connectivity testing
+- Service-specific functional validation
+- Cross-platform compatibility testing
+
 ## Key Features
 
 - Comprehensive monitoring
@@ -168,6 +232,18 @@ Current components:
 - Alloy for OpenTelemetry
 - Proxmox for virtualization
 
+**Container Platform:**
+
+- Podman 4.x+ for rootless containers
+- Systemd with Quadlets for service management
+- Cross-platform container networking
+
+**Service Management:**
+
+- Ansible collection with standardized roles
+- Shell script wrappers for simplified operations
+- Comprehensive verification and health checking
+
 ## Development Guidelines
 
 - Modular design
@@ -176,6 +252,14 @@ Current components:
 - Documented interfaces
 - Version controlled components
 - Consistent naming conventions
+
+**Container Service Standards:**
+
+- Follow established SOLTI container pattern
+- Implement all four core lifecycle states
+- Include comprehensive verification tasks
+- Support both RHEL and Debian platforms
+- Use consistent variable naming conventions
 
 ## Testing Methodology
 
