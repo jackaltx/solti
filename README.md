@@ -6,7 +6,7 @@ SOLTI provides a comprehensive framework for testing and integrating system comp
 
 ## Goal
 
-I have done small lab clusters for a while. Not the HVAC kind, but those that are built to task when/as desired.
+I have done small lab clusters for a while. Not the high availability kind, but those that are built to task when/as desired.
 The software and hardware technology half-life is real. The desirements and requirements alway grow tigher.
 
 Lately the focus was on security testing. As a kinestic creative I learn best by doing. The prize is building out a flexible, repeatable, testable computer cluster.
