@@ -1,8 +1,12 @@
 # SOLTI - Systems Oriented Laboratory Testing & Integration
 
+Kept for history.  Remove if not used by end of 2026.
+
 ## Overview
 
 SOLTI provides a comprehensive framework for testing and integrating system components in a controlled environment. The project emphasizes methodical testing, system behavior analysis, and component integration.
+
+The interesting component of this is how I am [developing](Development.md) it.
 
 ## Goal
 
@@ -11,8 +15,15 @@ The software and hardware technology half-life is real. The desirements and requ
 
 Lately the focus was on security testing. As a kinestic creative I learn best by doing. The prize is building out a flexible, repeatable, testable computer cluster.
 In this exercise I wanted to learn ansible, containers, github and LLMs. These efforts started on [cluster monitoring](https://github.com/jackaltx/solti-monitoring)
-to handle log and metric generation and collection.  The collection project is maturing, and I am starting on the ensemble work.  My tactical effort will
-be to [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) the molecule testing pattern, then move onto tools I need soon.
+to handle log and metric generation and collection.  The collection project is maturing, and I am starting on the ensemble work.  
+
+I develop the parts based on need and  interesting.  Here is a list of sprints where my work led.
+
+- Use molecule for testing the ansible deployments. Spent significant effort to keepii [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+- Explore and abondon WAZUH, too heavy for my needs. I am leaving the work in for now.
+- I don't care for how Docker likes to be in charge.  There are exensive examples of how to use PODMAN with systemctl.
+- Using PROXMOX, Linode and GITHUB for testing via molecule.
+- Using Ansible to build up an ISPConfig VM locally and in Linode.
 
 ## Claude as my pair programmer
 
