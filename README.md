@@ -1,30 +1,92 @@
 # SOLTI - Systems Oriented Laboratory Testing & Integration
 
+> *Auto-generated from component repositories*
+> *Last updated: 2025-09-30 18:24:59*
+
 ## Overview
 
 SOLTI provides a comprehensive framework for testing and integrating system components in a controlled environment. The project emphasizes methodical testing, system behavior analysis, and component integration.
 
 This project is using an AI.  I keep a diary of where I am in the [development](Development) process.  MCP works is starting!
 
-## Goal
+## 🎯 Goal
 
-I have done small lab clusters for a while. Not the high availability kind, but those that are built to task when/as desired.
-The software and hardware technology half-life is real. The desirements and requirements alway grow tigher.
+I have done small lab clusters for a while. Not the high availability kind, but those that are built for expirament as desired/required to operate as needed.  The tools and techniques change continually with short half-lifes. The tasks always grow to fit the capabilities of the time.
 
-Lately the focus was on security testing. As a kinestic creative I learn best by doing. The prize is building out a flexible, repeatable, testable computer cluster.
-In this exercise I wanted to learn ansible, containers, github and LLMs. These efforts started on [cluster monitoring](https://github.com/jackaltx/solti-monitoring)
-to handle log and metric generation and collection.  The collection project is maturing, and I am starting on the ensemble work.  My tactical effort will
-be to [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) the molecule testing pattern, then move onto tools I need soon.
+Lately my focus has been on security testing. I am a kinestic creative, which means I learn best by doing. The prize I am
+after is a is building out a flexible, repeatable, testable computer cluster that I can test and evolve. The skills I hopted to optain
+were a command of  ansible, linux containers, github and LLMs. I took technologies I was usig to formalize [cluster monitoring](https://github.com/jackaltx/solti-monitoring) to handle log and metric generation and collection.  The collection project is maturing, and I am starting on the ensemble work.  
 
-I develop the parts based on need and  interesting.  Here is a list of sprints where my work led.
+For now this is my tool and I develop the parts based on need and  interesting.  Here is a list of work product sprints.
 
-- Use molecule for testing the ansible deployments. Spent significant effort to keepii [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
-- Explore and abondon WAZUH, too heavy for my needs. I am leaving the work in for now.
-- I don't care for how Docker likes to be in charge.  There are exensive examples of how to use PODMAN with systemctl. Rather than spin up VMs for testing, it is easier to run a podman service.
-- Using PROXMOX, Linode and GITHUB for testing via molecule.
+- Use molecule for testing the ansible deployments. Spent significant effort to keep it  [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+using shared data patterns and fancy clever loops.
+- Explored and abondoned WAZUH, too heavy for my needs. I am leaving the work in for now/
+- There are exensive examples of how to use PODMAN with systemctl. Rather than spin up VMs for testing, it is easier to run a podman service. (I don't care for how Docker likes to be in charge.)
+- Molecule Distributed testing using PROXMOX, Linode and GITHUB.
 - Using Ansible to build up an ISPConfig VM locally and in Linode.
+- Explorations of fail2ban filtering
+- Distributed Metrics Collecition via Telegraf and Influxdb V2.  (V3 pending!)
+- Distributed Log Collection via Alloy and Loki.  
 
-## Name Origin
+## 📦 Component Repositories
+
+### [solti-monitoring](https://github.com/jackaltx/solti-monitoring)
+
+**Status:** ✅ Production Ready
+
+A comprehensive monitoring ecosystem for modern infrastructure, integrating metrics and log collection using Telegraf, InfluxDB, Alloy, and Loki. It adds in fail2ban for stand-alone detection/response. There is preliminary work on a WAZUH client for cluster monitoring.
+This goal of this collection is to provided tested, deployment-ready roles with advanced testing frameworks and utility scripts for seamless operations.
+
+Developers Note:  I developed in this folder initially. I have left some of the development
+artifacts to help anyone interested.  A sanitized set of reference files: inventory.yml, group_vars, and playbooks.
+The github molecule testing is too slow to be useful. Proxmox is ok for thoroughness.
+
+---
+
+### [solti-containers](https://github.com/jackaltx/solti-containers)
+
+**Status:** ✅ Production Ready
+
+> **A comprehensive Ansible collection for deploying containerized development and testing services using Podman, Quadlets, and systemd integration.**
+Modern development requires lightweight, ephemeral services that can be quickly deployed, tested, and removed. Virtual machines are too heavy for rapid iteration cycles. This collection addresses the need for:
+
+- **Consistent deployment patterns** across different services
+- **Lightweight testing environments** using containers instead of VMs
+- **Easy service lifecycle management** (prepare → deploy → verify → remove)
+
+---
+
+### [solti-ensemble](https://github.com/jackaltx/solti-ensemble)
+
+**Status:** 🚧 In Development
+
+A comprehensive collection of Ansible roles for infrastructure automation, security hardening, and development environment setup. Part of the SOLTI (Systems Oriented Laboratory Testing & Integration) ecosystem.
+This collection provides battle-tested Ansible roles covering everything from security auditing to development tooling. Each role is designed with best practices, security, and maintainability in mind, featuring advanced testing frameworks and AI-powered analysis capabilities.
+The collection provides integrated automation with clear patterns:
+
+- **claude_sectest**: Multi-script security auditing with Git-based change tracking and Claude AI analysis
+- **sshd_harden**: SSH daemon hardening with modern cryptographic algorithms
+
+---
+
+### [solti-conductor](https://github.com/jackaltx/solti-conductor)
+
+**Status:** 📋 Planned
+
+*This component is planned for future development*
+
+---
+
+### [solti-score](https://github.com/jackaltx/solti-score)
+
+**Status:** 📋 Planned
+
+*This component is planned for future development*
+
+---
+
+## 🎵 Name Origin
 
 - **S**ystems: Managing and testing system-of-systems
 - **O**riented: Structured and purposeful approach
@@ -35,141 +97,7 @@ I develop the parts based on need and  interesting.  Here is a list of sprints w
 Named after [Sir Georg Solti](https://en.wikipedia.org/wiki/Georg_Solti), renowned for his precise and analytical conducting style.
 His [Wagner](https://en.wikipedia.org/wiki/Der_Ring_des_Nibelungen_(Georg_Solti_recording)) works have held up to time.
 
-## Project Structure
-
-There is no one way to look at this project structure.  At the heart is about building
-a flexible and testable cluster out of services writen by other people. To accomplish this
-I am using the Ansible inventory to define the cluster interactions. Ansible roles are idempotent scripts
-that install, configure, test the clusters intended functionality. This is our starting. ansible galaxy
-collection structure concept.
-
-```
-jackaltx/
-├── solti/monitoring/   # System monitoring and metrics collection
-├── solti/conductor/    # Proxmox management and orchestration
-├── solti/ensemble/     # Support tools and shared utilities
-├── solti/containers/   # Testing containers
-└── solti/score/        # Documentation and playbooks
-```
-
-To realize this, I use this logical repository structure on github
-
-```
-jackaltx/
-├── solti-monitoring/   # System monitoring and metrics collection
-├── solti-conductor/    # Proxmox management and orchestration
-├── solti-ensemble/     # Support tools and shared utilities
-├── solti-containers/   # Testing containers
-└── solti-score/        # Documentation and playbooks
-```
-
-## Github Repository links
-
-- [jackaltx/solti-monitoring](https://github.com/jackaltx/solti-monitoring)  
-- jackaltx/solti-conductor/    # Proxmox management and orchestration
-- [jackaltx/solti-ensemble](https://github.com/jackaltx/solti-ensemble)
-- [jackaltx/solti-containers](https://github.com/jackaltx/solti-containers)
-- jackaltx/solti-score
-
-## Current Implementation Status
-
-**Production Ready Projects:**
-
-- ✅ **solti-monitoring**: Comprehensive metrics and logging
-- ✅ **solti-containers**: Production-ready container services
-- 🚧 **solti-ensemble**: Support tools (in development)
-- 📋 **solti-conductor**: Proxmox management (planned)
-- 📋 **solti-score**: Documentation (planned)
-
-### solti-monitoring (Production Ready)
-
-Current implementation includes:
-
-- Metrics collection (Telegraf)
-- Time-series storage (InfluxDB)
-- Log aggregation (Loki)
-- OpenTelemetry collection (Alloy)
-- Shared configurations and utilities
-
-### solti-containers (Production Ready)
-
-**Status: Production Ready** - Comprehensive container deployment framework
-
-Current implementation includes:
-
-- **Elasticsearch**: Search and analytics with Elasticvue GUI
-- **HashiVault**: Complete secrets management with multiple engines
-- **Mattermost**: Team collaboration with PostgreSQL backend
-- **Redis**: High-performance key-value store with GUI
-- **Traefik**: Modern reverse proxy with TLS automation
-- **MinIO**: S3-compatible object storage
-
-**Key Features:**
-
-- Rootless Podman deployment with systemd integration
-- Cross-platform support (RHEL/CentOS and Debian-based)
-- Standardized management scripts (`manage-svc.sh`, `svc-exec.sh`)
-- Security-first design with SELinux support
-- Consistent deployment patterns across all services
-
-**Architecture Highlights:**
-
-- Common `_base` role for shared functionality
-- Quadlet-based systemd integration
-- Automated service lifecycle management
-- Comprehensive verification and health checking
-
-**Container Services Integration:**
-
-The containers project integrates with the monitoring stack:
-
-- **Mattermost**: Receives monitoring alerts and notifications
-- **Elasticsearch**: Stores and analyzes log data from monitoring
-- **Redis**: Caches metrics and provides fast data access
-- **HashiVault**: Manages secrets for monitoring components
-- **Traefik**: Provides reverse proxy for monitoring dashboards
-
-This creates a complete development and testing ecosystem where:
-
-1. Monitoring collects metrics and logs
-2. Containers provide supporting services
-3. Everything is deployed consistently via Ansible
-4. Services can be quickly spun up/down for testing
-
-### solti-conductor (TBD)
-
-Planned features:
-
-- Proxmox VM management
-- Resource orchestration
-- Configuration management
-- Deployment automation
-
-### solti-ensemble (Starting)
-
-Current implementation includes:
-
-- Mariadb (MySQL)
-- HashiVault (InfluxDB)
-- Automated Certificate Management Environment (ACME)
-
-Planned features:  (not now)
-
-- NFS client management
-- Common system configurations
-- Shared security policies
-- Cross-component utilities
-
-### solti-score (TBD)
-
-Documentation and playbooks:
-
-- Architecture documentation
-- Implementation guides
-- Integration patterns
-- Best practices
-
-## Testing Philosophy
+## 🧪 Testing Philosophy
 
 - Emphasis on controlled environments
 - Systematic behavior analysis
@@ -194,7 +122,7 @@ Documentation and playbooks:
 - Log aggregation
 - Configuration management
 
-## Technology Stack
+## 🛠️ Technology Stack
 
 Current components:
 
@@ -251,7 +179,7 @@ Current components:
 - Rollback capabilities
 - Monitoring integration
 
-## Security Considerations
+## 🔒 Security Considerations
 
 - Component isolation
 - Access control
@@ -267,26 +195,10 @@ Current components:
 - Additional monitoring capabilities
 - Extended testing frameworks
 
-## Contributing
-
-TBD:
-
-- Contribution guidelines
-- Code review process
-- Testing requirements
-- Documentation standards
-- Version control workflow
-
-## License
+## 📄 License
 
 The concept is open. All my work will be MIT.
 
-## Contact
+## 📞 Contact
 
 Use github for now.
-
-## Acknowledgments
-
-- Sir Georg Solti - Name inspiration
-- Open source community
-- Project contributors
