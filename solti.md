@@ -1,7 +1,5 @@
 # SOLTI - Systems Oriented Laboratory Testing & Integration
 
-Kept for history.  Remove if not used by end of 2026.
-
 ## Overview
 
 SOLTI provides a comprehensive framework for testing and integrating system components in a controlled environment. The project emphasizes methodical testing, system behavior analysis, and component integration.
